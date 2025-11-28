@@ -1,8 +1,8 @@
 import pandas as pd
 from pathlib import Path
 
-# Set paths
-data_path = Path("../data")
+# Paths
+data_path = Path(__file__).parent.parent / "data"
 raw_csv = data_path / "raw_reviews.csv"
 clean_csv = data_path / "cleaned_reviews.csv"
 
@@ -10,13 +10,13 @@ clean_csv = data_path / "cleaned_reviews.csv"
 df = pd.read_csv(raw_csv)
 
 # Remove duplicates
-df.drop_duplicates(subset=["review", "date", "bank"], inplace=True)
+df = df.drop_duplicates(subset=["review", "date", "bank"])
 
-# Handle missing values
-df["review"].fillna("No review text", inplace=True)
-df["rating"].fillna(df["rating"].median(), inplace=True)
+# Handle missing values (avoid inplace to remove FutureWarning)
+df["review"] = df["review"].fillna("No review text")
+df["rating"] = df["rating"].fillna(df["rating"].median())
 
-# Normalize date format
+# Normalize dates
 df["date"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
 
 # Save cleaned dataset
