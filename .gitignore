@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+env/
+venv/
+.env
+
+# Data (don't commit large raw datasets)
+data/
+data/processed/
+data/samples/
+
+# IDE
+.vscode/
+.ipynb_checkpoints/
+
+# Secrets
+secrets.json
