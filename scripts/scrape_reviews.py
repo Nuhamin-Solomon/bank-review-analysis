@@ -36,5 +36,5 @@ for bank, app_id in apps.items():
 # Save raw reviews to data folder
 raw_csv = data_path / "raw_reviews.csv"
 df = pd.DataFrame(all_reviews)
-df.to_csv(raw_csv, index=False)
+df.to_csv("../data/raw_reviews.csv", index=False)
 print(f"Scraping completed! Saved to {raw_csv}")
