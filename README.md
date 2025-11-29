@@ -29,6 +29,15 @@ Quick run:
 3\. python scripts\\preprocess\_reviews.py
 
 4\. python scripts\\sentiment\_and\_themes.py
+## Task 3 — Store Cleaned Data in PostgreSQL
+
+- Database: bank_reviews
+- Tables: banks, reviews
+- CSV path: data/reviews_with_sentiment.csv
+- Python script: scripts/insert_into_postgres.py
+- Run:
+  pip install psycopg2-binary pandas
+  python scripts/insert_into_postgres.py
 
 
 
