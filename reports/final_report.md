@@ -98,3 +98,8 @@ The objective is to identify **drivers of user satisfaction**, highlight **pain 
 SELECT COUNT(*) FROM reviews;
 SELECT bank_id, COUNT(*) FROM reviews GROUP BY bank_id;
 SELECT sentiment_label, COUNT(*) FROM reviews GROUP BY sentiment_label;
+![CBE Theme Sentiment](../data/plots/CBE_theme_sentiment.png)
+![BOA Theme Sentiment](../data/plots/BOA_theme_sentiment.png)
+![Dashen Theme Sentiment](../data/plots/Dashen_theme_sentiment.png)
+![Reviews per Bank](../data/plots/review_per_bank.png)
+![Sentiment Distribution](../data/plots/sentiment_distribution.png)
